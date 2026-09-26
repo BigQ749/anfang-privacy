@@ -5,29 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>隐私说明 · 安放</title>
   <style>
-    body { margin: 0; background: #141210; color: #f4efe6; font: 16px/1.8 "PingFang SC", "Microsoft YaHei", sans-serif; }
-    main { max-width: 36em; margin: 0 auto; padding: 40px 22px 72px; }
-    h1 { font-size: 28px; font-weight: 600; letter-spacing: 0.08em; margin: 0 0 12px; }
-    h2 { font-size: 18px; margin: 28px 0 8px; }
-    p { color: #cfc4b0; margin: 0 0 12px; }
+    :root {
+      color-scheme: dark;
+      --bg: #100e0c;
+      --card: #1c1814;
+      --line: rgba(243, 230, 196, 0.14);
+      --ink: #f6f1e8;
+      --muted: #c9bfb0;
+      --gold: #e0b57a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 420px at 50% -10%, rgba(224, 181, 122, 0.16), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.75 "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    }
+    main { max-width: 40rem; margin: 0 auto; padding: 36px 20px 80px; }
+    .kicker { margin: 0; color: var(--gold); letter-spacing: 0.28em; font-size: 12px; }
+    h1 { margin: 10px 0 8px; font-size: 40px; font-weight: 600; letter-spacing: 0.12em; }
+    .lead { margin: 0 0 18px; color: var(--muted); }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; list-style: none; }
+    .meta li {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    section {
+      margin: 0 0 14px;
+      padding: 18px 18px 8px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    h2 { margin: 0 0 8px; font-size: 18px; font-weight: 650; }
+    p, li { color: var(--muted); }
+    ul { margin: 0 0 12px; padding-left: 1.2em; }
+    li { margin: 0 0 6px; }
+    a { color: var(--gold); }
   </style>
 </head>
 <body>
 <main>
+  <p class="kicker">隐私说明</p>
   <h1>安放</h1>
-  <p>本说明说明安放如何处理信息。安放是单机应用，不设账号，不把内容上传到服务器。</p>
-  <h2>我们保存什么</h2>
-  <p>守夜的开始时间、结束时间，以及你选择的警报声，只保存在这台手机上。</p>
-  <h2>移动感应</h2>
-  <p>只有安放处于打开状态时，才会根据手机是否被拿起来决定是否发出警报。不读取位置，不读取通讯录、相机或麦克风。</p>
-  <h2>我们不做什么</h2>
-  <p>无广告，无个性化推荐，无统计分析，无推送，不向第三方提供上述内容。</p>
-  <h2>保存多久</h2>
-  <p>保存到你卸载本应用为止。卸载后，本机中的这些记录一并删除。没有云端账号可以注销。</p>
-  <h2>未成年人</h2>
-  <p>安放不面向 14 岁以下儿童收集信息。未成年人请在监护人指导下使用。</p>
-  <h2>联系</h2>
-  <p>如需联系开发者，请使用你在华为应用市场提交的本人电话或邮箱。</p>
+  <p class="lead">安放提醒你在自己设定的时间里放下手机。它装在这台设备上，不设账号，也没有自己的服务器。</p>
+  <ul class="meta">
+    <li>更新日期：2026年9月26日</li>
+    <li>年龄分级：3岁以上</li>
+    <li>鸿蒙包名：com.anfang.app.hmos</li>
+    <li>开发者：齐赛军</li>
+  </ul>
+
+  <section>
+    <h2>这是做什么的</h2>
+    <p>你设好守夜时间，打开安放并点「放下」。安放还开着的时候，拿起手机会发出警报；放回原处并静置后，声音停止。警报声可以在应用里选择。</p>
+    <p>离开安放，或从后台清除之后，不再识别手机是否被拿起，也不会再响。</p>
+  </section>
+
+  <section>
+    <h2>保存在这台手机上的内容</h2>
+    <ul>
+      <li>你设定的守夜开始时间和结束时间。</li>
+      <li>你选择的警报声。</li>
+    </ul>
+    <p>这些内容只写在当前这台设备里，用来记住你的设置，并在安放开着时判断是否发出警报。</p>
+  </section>
+
+  <section>
+    <h2>打开应用时使用的设备能力</h2>
+    <p>只有安放处于打开状态时，才会根据手机是否被拿起来决定是否发出警报。这一过程留在本机，不上传。</p>
+    <p>安放不读取位置，不读取通讯录、短信、相册、相机或麦克风，也不获取设备唯一标识。</p>
+  </section>
+
+  <section>
+    <h2>不会做的事</h2>
+    <ul>
+      <li>不设注册、登录或云端账号。</li>
+      <li>不把守夜时间、警报声选择或移动情况上传到服务器，也不传到境外。</li>
+      <li>不做广告、个性化推荐、统计分析或消息推送。</li>
+      <li>不向第三方共享、转让或公开上述内容。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>权限</h2>
+    <p>应用不申请网络、定位、相机、麦克风、通讯录权限。到点提醒若使用系统的代理提醒，由系统在你设定的时间发出通知；是否允许通知，由你在系统里决定。</p>
+  </section>
+
+  <section>
+    <h2>保存多久，怎么删除</h2>
+    <p>保存到你卸载本应用为止。卸载后，系统会删除应用在本机的数据。没有云端副本，也没有需要另行注销的账号。</p>
+    <p>你可以在应用里改时间、换警报声，或结束这一次守夜。想全部去掉，卸载即可。</p>
+  </section>
+
+  <section>
+    <h2>3岁以上与未成年人</h2>
+    <p>安放的年龄分级为 3 岁以上。应用内容是放下手机的提醒，不含社交、支付或对外发布的内容。</p>
+    <p>不满 14 周岁的未成年人，应在监护人同意和指导下使用。安放不设账号，不收集姓名、电话、证件、位置或照片，也不根据年龄做推荐。</p>
+    <p>监护人如需删除本机记录，卸载安放即可。</p>
+  </section>
+
+  <section>
+    <h2>联系我们</h2>
+    <p>开发者：齐赛军。</p>
+    <p>邮箱：<a href="mailto:saijunqi@gmail.com">saijunqi@gmail.com</a></p>
+    <p>你也可以通过华为应用市场中的开发者联系方式留言。</p>
+  </section>
 </main>
 </body>
 </html>
