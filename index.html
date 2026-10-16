@@ -47,6 +47,12 @@
     ul { margin: 0 0 12px; padding-left: 1.2em; }
     li { margin: 0 0 6px; }
     a { color: var(--gold); }
+    .sensor { border-color: rgba(224, 181, 122, 0.45); background: #241c15; }
+    .sensor-tag { margin: 0 0 6px; color: var(--gold); font-size: 13px; font-weight: 700; }
+    .facts { margin: 8px 0 16px; }
+    .facts div { padding: 10px 0; border-top: 1px solid var(--line); }
+    .facts dt { color: var(--ink); font-weight: 700; }
+    .facts dd { margin: 2px 0 0; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -61,6 +67,18 @@
     <li>Android 包名：com.anfang.app</li>
     <li>开发者：齐赛军</li>
   </ul>
+
+  <section class="sensor" id="accelerometer">
+    <p class="sensor-tag">鸿蒙版核心能力 · 加速度传感器</p>
+    <h2>仅在你主动开始守夜后读取</h2>
+    <dl class="facts">
+      <div><dt>处理目的</dt><dd>判断手机是否相对放置姿态发生拿起、翻动或放回动作，决定何时播放或停止警报。</dd></div>
+      <div><dt>读取方式</dt><dd>你点击「放下」后，安放在前台守夜期间通过鸿蒙系统加速度传感器接口连续读取数据。应用请求约每 50 毫秒获取一次读数；实际回调频率由系统决定。通过读数变化计算动作状态。</dd></div>
+      <div><dt>数据范围</dt><dd>仅使用传感器返回的 X、Y、Z 三轴加速度数值及由此计算的变化幅度、相对放置姿态。不读取地理位置，也不通过传感器识别你的身份。</dd></div>
+      <div><dt>保存与传输</dt><dd>原始加速度数值及计算过程只在本机运行内存中即时处理，不写入本机记录、不上传服务器、不提供给第三方。结束后仅保存本次守夜时长与拿起次数的摘要。</dd></div>
+    </dl>
+    <p>安放声明 <code>ohos.permission.ACCELEROMETER</code> 权限。长按「结束」、手动锁屏、离开应用或清除后台时停止读取；未开始守夜时不订阅原生加速度传感器。若不希望安放读取动作数据，请不要开始守夜，或结束本次守夜。</p>
+  </section>
 
   <section>
     <h2>这是做什么的</h2>
